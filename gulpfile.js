@@ -14,7 +14,10 @@ var configuration = {
   basename: 'kapusons-ui-map',
   paths: {
     src: {
-      html: './src/html/*.html',
+      html: [
+      './src/html/*.html',
+      './src/html/region-detail/*.html'
+      ],
       img: './src/img/**/*',
       scss: [
         './src/scss/**/*.scss'
@@ -74,6 +77,7 @@ gulp.task('serve', function() {
   browserSync(Object.assign({}, {
     notify: false,
     logPrefix: 'BrowserSync',
+    port: process.env.PORT || 5000,
     'server': ['./dist/']
   }, {}));
 

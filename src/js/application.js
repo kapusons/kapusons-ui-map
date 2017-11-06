@@ -70,7 +70,7 @@ function placeMarkers(feat, map){
 			(m.url ?
 				' <a href="' + m.url + '" class="scheda-trigger">Details</a>'
 				: '') +
-			' </div>' +
+			' </div>' + '<p style="font-size: 10px; margin-top: 10px; padding: 2px 5px; background: lightgrey;">Google Maps GeoJSON Implementation by Kapusons <img src="img/logo.png" style="height: 20px"></p>' +
 			'</div>';
 
 			$('.region-list-wrapper').append(info);

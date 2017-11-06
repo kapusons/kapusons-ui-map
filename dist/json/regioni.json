@@ -7,44 +7,17 @@
                 "name":"Abruzzo",
                 "items":[
                     {
-                        "id": "1",
-                        "lat":"42.3646668",
-                        "lng":"14.1671622",
-                        "name":"Lorem ipsum dolor sit amet",
-                        "title": "Conquiescar in moto perpetuo",
-                        "address":"Via Dei Frentani 81",
-                        "city":"Chieti",
-                        "website":"http:\/\/www.abruzzocsv.org",
-                        "email":"coordinamento@abruzzocsv.org",
-                        "phone":"",
-                        "url":"region-detail.html"
-                    },
-                    {
                         "id": "2",
-                        "lat":"42.3510597",
-                        "lng":"13.3455154",
-                        "name":"L'Aquila",
-                        "title":"Coordinamento associazioni di volontariato della provincia dell'Aquila",
-                        "address":"Via Saragat Snc",
-                        "city":"L'Aquila",
-                        "website":"www.csvaq.it",
-                        "email":"info@csvaq.it",
-                        "phone":"0862 318637",
-                        "url":"region-detail.html"
-                    },
-                    {
-                        "id": "3",
-                        "lat":"42.4653309",
-                        "lng":"14.2123246",
-                        "name":"Pescara",
-                        "title":"Federazione delle opere non profit - Abruzzo",
-                        "address":"Via Venezia S4nc",
-                        "city":"Pescara",
-                        "website":"www.csvaq.it",
-                        "email":"info@csvpescara.it",
-                        "phone":"0852 924249",
-                        "url":"region-detail.html"
-
+                        "lat":"42.350139676961426",
+                        "lng":"13.39851379394531",
+                        "name":"Capoluogo: L'Aquila",
+                        "title":"Comune dell'Aquila",
+                        "address":"Via San Bernardino",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"0862.6451 ",
+                        "url":"abruzzo.html"
                     }
                 ]
             },
@@ -603,7 +576,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Basilicata"
+                "name":"Basilicata",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"40.63854399243365",
+                        "lng":"15.80364927649498",
+                        "name":"Capoluogo: Potenza",
+                        "title": "Comune di Potenza",
+                        "address":"Piazza G. Matteotti",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":" 0971 415111",
+                        "url":"basilicata.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -1164,7 +1152,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Calabria"
+                "name":"Calabria",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"38.90986950156588",
+                        "lng":"16.58788427710533",
+                        "name":"Capoluogo: Catanzaro",
+                        "title": "Comune di Catanzaro",
+                        "address":"Palazzo De Nobili via Iannoni, 68",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"0961.8811",
+                        "url":"calabria.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -1689,7 +1692,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Campania"
+                "name":"Campania",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"40.85303340031356",
+                        "lng":"14.272343963384628",
+                        "name":"Capoluogo: Napoli",
+                        "title": "Comune di Napoli",
+                        "address":"Palazzo San Giacomo",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"081-7951111",
+                        "url":"campania.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -2536,7 +2554,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Emilia-romagna"
+                "name":"Emilia-Romagna",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"44.4950359738693",
+                        "lng":"11.341913938522339",
+                        "name":"Capoluogo: Bologna",
+                        "title": "Comune di Bologna",
+                        "address":"Piazza Maggiore, 6",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"051 2193111",
+                        "url":"emilia_romagna.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -3637,7 +3670,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Friuli-venezia Giulia"
+                "name":"Friuli-Venezia Giulia",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"45.64932838572134",
+                        "lng":"13.776635527610779",
+                        "name":"Capoluogo: Trieste",
+                        "title": "Comune di Trieste",
+                        "address":"Piazza Unità d'Italia 4",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"040 6751",
+                        "url":"friuli_venezia_giulia.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -4334,7 +4382,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Lazio"
+                "name":"Lazio",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"41.90266033477953",
+                        "lng":"12.495526671409607",
+                        "name":"Capoluogo: Roma",
+                        "title": "Comune di Roma",
+                        "address":"Piazza del Campidoglio 1",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"06 0606",
+                        "url":"lazio.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -5365,7 +5428,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Liguria"
+                "name":"Liguria",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"44.407186",
+                        "lng":"8.933983",
+                        "name":"Capoluogo: Genova",
+                        "title": "Comune di Genova",
+                        "address":"Via Garibaldi 9",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"010.557111",
+                        "url":"liguria.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -6248,7 +6326,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Lombardia"
+                "name":"Lombardia",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"45.464161",
+                        "lng":"9.190336",
+                        "name":"Capoluogo: Milano",
+                        "title": "Comune di Milano",
+                        "address":"Piazza della Scala, 2",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"",
+                        "url":"lombardia.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -7685,7 +7778,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Marche"
+                "name":"Marche",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"43.61861721292451",
+                        "lng":"13.511154502630234",
+                        "name":"Capoluogo: Ancona",
+                        "title": "Comune di Ancona",
+                        "address":"Largo XXIV Maggio,1",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"071 222 1",
+                        "url":"marche.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -8294,7 +8402,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Molise"
+                "name":"Molise",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"41.56023366733346",
+                        "lng":"14.659612029790878",
+                        "name":"Capoluogo: Campobasso",
+                        "title": "Comune di Campobasso",
+                        "address":"Piazza Vittorio Emanuele, 29",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"0874 4051",
+                        "url":"molise.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -8731,7 +8854,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Piemonte"
+                "name":"Piemonte",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":" 45.066667",
+                        "lng":"7.7",
+                        "name":"Capoluogo: Torino",
+                        "title": "Comune di Torino",
+                        "address":"Piazza Palazzo di Città, 1",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"+39-011-011.999",
+                        "url":"piemonte.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -10060,7 +10198,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Puglia"
+                "name":"Puglia",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"41.123913776812785",
+                        "lng":"16.868538558483124",
+                        "name":"Capoluogo: Bari",
+                        "title": "Comune di Bari",
+                        "address":"Corso Vittorio Emauele II, 84",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"080 577 1111",
+                        "url":"puglia.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -11049,7 +11202,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Sardegna"
+                "name":"Sardegna",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"39.21582980291525",
+                        "lng":"9.113907516002655",
+                        "name":"Capoluogo: Cagliari",
+                        "title": "Comune di Cagliari",
+                        "address":"Via Roma 145",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"070 6771",
+                        "url":"sardegna.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -12582,7 +12750,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Sicilia"
+                "name":"Sicilia",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"38.11652885525269",
+                        "lng":"13.363470733165741",
+                        "name":"Capoluogo: Palermo",
+                        "title": "Comune di Palermo",
+                        "address":"Piazza Pretoria, 1",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"091.7401111",
+                        "url":"sicilia.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -13881,7 +14064,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Toscana"
+                "name":"Toscana",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"43.770133133358875",
+                        "lng":"11.256940215826035",
+                        "name":"Capoluogo: Firenze",
+                        "title": "Comune di Firenze",
+                        "address":"Palazzo Vecchio, Piazza della Signoria",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"",
+                        "url":"toscana.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -15190,7 +15388,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Trentino-alto Adige\/s\u00fcdtirol"
+                "name":"Trentino-Alto Adige\/S\u00fcdtirol",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"46.066667",
+                        "lng":"11.116667",
+                        "name":"Capoluogo: Trento",
+                        "title": "Comune di Trento",
+                        "address":"Via Belenzani, 19",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"0461 884111",
+                        "url":"trentino_alto_adige.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -16023,7 +16236,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Umbria"
+                "name":"Umbria",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"43.11219965765882",
+                        "lng":"12.388789504766464",
+                        "name":"Capoluogo: Perugia",
+                        "title": "Comune di Perugia",
+                        "address":"Corso Vannucci N. 19",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"075 5771",
+                        "url":"umbria.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -16714,7 +16942,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Valle D'aosta\/vall\u00e9e D'aoste"
+                "name":"Valle d'Aosta\/Vall\u00e9e d'Aoste",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"45.737222",
+                        "lng":"7.320556",
+                        "name":"Capoluogo: Aosta",
+                        "title": "Comune di Aosta",
+                        "address":"Piazza Chanoux, 1",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"0165 3001",
+                        "url":"valledaosta.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
@@ -17011,7 +17254,22 @@
         {
             "type":"Feature",
             "properties":{
-                "name":"Veneto"
+                "name":"Veneto",
+                "items":[
+                    {
+                        "id": "1",
+                        "lat":"45.439722",
+                        "lng":"12.331944",
+                        "name":"Capoluogo: Venezia",
+                        "title": "Comune di Venezia",
+                        "address":"Via Palazzo 1",
+                        "city":"",
+                        "website":"",
+                        "email":"",
+                        "phone":"041 2748111",
+                        "url":"veneto.html"
+                    }
+                ]
             },
             "geometry":{
                 "type":"Polygon",
