@@ -1,22 +1,25 @@
 var configuration = {
-	"dataSource": "json/regioni.json",
+	"dataSource": "json/world.subset.json", 
+	"showLeftColumn": false,
 	"mapOptions": {
-		"center": {lat: 41.913355, lng: 12.484130},
-		"zoom": 6,
+		"center": {
+			lat: 38.513456, lng: 44.523900
+		},
+		"zoom": 4,
 		"scrollwheel": false,
 		"gestureHandling": 'cooperative',
-    "mapTypeControlOptions": {
-	    "style": google.maps.MapTypeControlStyle.DEFAULT  
-	  },
-    "styles": [
-	    {
-	    	"featureType": "all",
-	    	"elementType": "labels",
-	    	"stylers": [
-	    		{ "visibility": "off" }
-	    	]
-	    }
-    ]
+    	"mapTypeControlOptions": {
+	    	"style": google.maps.MapTypeControlStyle.DEFAULT  
+		},
+		"styles": [
+		    {
+		    	"featureType": "all",
+		    	"elementType": "labels",
+		    	"stylers": [
+		    		{ "visibility": "off" }
+		    	]
+		    }
+		]
 	},
 	"styles": {
 		"feature": {

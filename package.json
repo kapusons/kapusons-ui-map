@@ -4,8 +4,8 @@
   "description": "",
   "main": "dist/kapusons-ui-map.js",
   "dependencies": {
-    "browser-sync": "^2.18.12",
     "bower": "1.8.2",
+    "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",
@@ -13,6 +13,7 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
+    "map-stream": "0.0.7",
     "perfect-scrollbar": "^1.0.3"
   },
   "repository": {
@@ -25,5 +26,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "gulp-json-format": "^1.0.0",
+    "run-sequence": "^2.2.0",
+    "yargs": "^10.0.3"
+  }
 }

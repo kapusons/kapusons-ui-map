@@ -56,9 +56,20 @@ a {
 		margin-right: auto;
 		overflow: hidden;
 	}
+
+	&.full-width{
+		#map-canvas{
+			left:0;
+			box-shadow:none;
+		}
+
+		#map-region-description{
+			left: 70px;
+		}
+	}
 }
 
-#map-tail {
+#region-tooltip {
 	position: absolute;
 	z-index: 50;
 	font-size: 1rem;
@@ -121,13 +132,28 @@ a {
 	}
 }
 
-.close-region-detail, .close-csv-detail{
+.close-region-description{
+	position: absolute;
+	right: 25px;
+	top: 25px;
+	transition: all .3s;
+
+	&:hover{
+		transform: rotateZ(180deg);
+	}
+}
+
+.close-region-detail{
 	display:none;
 	position: absolute;
-	right: 10px;
-	top: 10px;
+	right: 8px;
+    top: 8px;
 	transition: all .3s;
 	z-index: 11;
+
+	@media (max-width:991px){
+		right: 21px;
+	}
 
 	&:hover{
 		transform: rotateZ(180deg);
@@ -135,29 +161,6 @@ a {
 
 	img{
 		width: 32px;
-	}
-}
-
-.close-region-detail{
-	@media (max-width:991px){
-		right: 21px;
-	}
-}
-
-.close-csv-detail{
-	@media (max-width:991px){
-		right: 18px !important;
-	}
-}
-
-.close-csv-detail{
-	display:inline-block;
-	display: inline-block;
-	top: 1.5rem;
-	right: 1.5rem;
-
-	img{
-		width: 40px;
 	}
 }
 
@@ -419,7 +422,7 @@ a {
 	}
 }
 
-#map-region-detail{
+#map-region-description{
 	display:none;
 	position: absolute;
 	top: 4vw;
@@ -441,7 +444,7 @@ a {
 		width: 100%;
 	}
 
-	.map-region-detail-body{
+	.map-region-description-body{
 		overflow: hidden;
 		position:relative;
 		padding: 0 2rem;
