@@ -63,8 +63,8 @@ and call kapusonsUiMap plugin inside a `$(document).ready` function:
 A more complex initialization with all options set could look like this:
 ```javascript
 $('#map-wrapper').kapusonsUiMap({
-    dataSource: "json/world.subset.json", 
-    mapTitle: 'Regions',
+  dataSource: "json/world.subset.json", 
+  mapTitle: 'Regions',
   showLeftColumn: true,
   showRegionTooltip: true,
   showRegionDetail: true,
@@ -131,14 +131,14 @@ $('#map-wrapper').kapusonsUiMap({
 - `regionOnClick`: defines a custom handler for click event on a state/polygon; this function ovverrides the default behavior 
 - `onMapLoaded`: the callback fired when the map is idle
  
-#### How to generate a custom GeoJson library as data source
+## How to generate a custom GeoJson library as data source
 You can easily create your GeoJson data source starting from the two GeoJson libraries provided by kapousns-ui-map. As you probably want to display a custom set of polygons/states, you'll find a usefull gulp task for this purpose. As example:
 
 ```javascript
 gulp makejson --regions "it,fr,gb" --featureProperty ISO_A2 --searchIn world
 ```
 
-- In the `--regions` parameter you can define a list of states/polygon you want to include in your map in the form of a comma separated string. Each value must match one of those supported standard code: **SOV_A3, ADMIN, ADM0_A3, GEOUNIT, GU_A3, SUBUNIT, SU_A3, name, NAME_LONG, BRK_A3, BRK_NAME, BRK_GROUP, ABBREV, POSTAL, FIPS_10_, ISO_A2, ISO_A3, ISO_N3, UN_A3, WB_A2, WB_A3, ADM0_A3_IS, ADM0_A3_US**
+- In the `--regions` parameter you can define a list of states/polygon you want to include in your map in the form of a comma separated string. Each value must match one of those supported standard code (ISO 3166 and others): **SOV_A3, ADMIN, ADM0_A3, GEOUNIT, GU_A3, SUBUNIT, SU_A3, name, NAME_LONG, BRK_A3, BRK_NAME, BRK_GROUP, ABBREV, POSTAL, FIPS_10_, ISO_A2, ISO_A3, ISO_N3, UN_A3, WB_A2, WB_A3, ADM0_A3_IS, ADM0_A3_US**
 - You'll define the selected standard code in the `--featureProperty` parameter, as a comparison value
 - the `--searchIn` parameter defines in which data source you'll search the specified regions (availables data source are **world** and **italy**)
 
