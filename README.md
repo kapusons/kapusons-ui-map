@@ -5,11 +5,11 @@
 ## Features
 
 #### Complete navigation flow
-`kapusons-ui-map` consits in a mini-site with a common navigation flow: 
+`kapusons-ui-map` consists in a mini-site with a common navigation flow: 
 
-  - A general map, with the states you've choosen, as an index
-  - A second level shows markers associated with the selected country
-  - A third level goes inside the marker info and displays them
+  - A general map, with the states you've choosen, as an index page
+  - A second level shows markers associated with the selected country with few informations
+  - A third level goes inside the marker info and displays a longer description
 
 #### GeoJson data
 `kapusons-ui-map` provides two GeoJson libraries with polygons coordinates for:
