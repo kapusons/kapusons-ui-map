@@ -1,6 +1,6 @@
 {
   "name": "kapusons-ui-map",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "description": "Kapusons implementation of interactive maps through GeoJson data",
   "main": [
     "dist/kapusons-ui-map.js",

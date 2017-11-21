@@ -4,17 +4,9 @@
   "description": "",
   "main": "dist/kapusons-ui-map.js",
   "dependencies": {
-    "bower": "1.8.2",
-    "browser-sync": "^2.18.12",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-uglify": "^3.0.0",
-    "map-stream": "0.0.7",
-    "perfect-scrollbar": "^1.0.3"
+    "jquery": "^3.0.0",
+    "font-awesome": "^4.7.0",
+    "animate.css": "^3.5.2"
   },
   "repository": {
     "type": "git",
@@ -30,6 +22,17 @@
   "devDependencies": {
     "gulp-json-format": "^1.0.0",
     "run-sequence": "^2.2.0",
-    "yargs": "^10.0.3"
+    "yargs": "^10.0.3",
+    "bower": "1.8.2",
+    "browser-sync": "^2.18.12",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "^3.0.0",
+    "map-stream": "0.0.7",
+    "perfect-scrollbar": "^1.0.3"
   }
 }

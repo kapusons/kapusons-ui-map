@@ -122,8 +122,10 @@ gulp.task('makejson', function() {
             return featureSubsetProperties.indexOf(x) < 0 
         });
 
-        console.log('!### Warning > regions not found: ' + notFound);
-
+        if(notFound.length){
+          console.log('!### Warning > regions not found: ' + notFound);  
+        }
+        
         var transformedJson = {
          "type": "FeatureCollection",
          "features": featureSubset
@@ -135,7 +137,7 @@ gulp.task('makejson', function() {
     }))
     .pipe(jsonFormat(4))
     .pipe(rename({ suffix: '.subset' }))
-    .pipe(gulp.dest(configuration.paths.src.jsonFolder));
+    .pipe(gulp.dest(configuration.paths.src.jsonFolder))
 });
 
 
