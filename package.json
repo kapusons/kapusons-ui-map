@@ -1,7 +1,7 @@
 {
   "name": "kapusons-ui-map",
   "version": "1.0.0",
-  "description": "",
+  "description": "Kapusons implementation of interactive map through GeoJson data",
   "main": "dist/kapusons-ui-map.js",
   "dependencies": {
     "jquery": "^3.0.0",
@@ -16,8 +16,16 @@
     "start": "gulp serve",
     "postinstall": "bower install"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "google maps",
+    "geojson",
+    "features",
+    "feature",
+    "polygon",
+    "states",
+    "italy"
+  ],
+  "author": "lazymood <gianlucalavezzo@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "gulp-json-format": "^1.0.0",
