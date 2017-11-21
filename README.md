@@ -63,8 +63,8 @@ and call kapusonsUiMap plugin inside a `$(document).ready` function:
 A more complex initialization with all options set could look like this:
 ```javascript
 $('#map-wrapper').kapusonsUiMap({
-    dataSource: "json/world.subset.json", 
-    mapTitle: 'Regions',
+  dataSource: "json/world.subset.json", 
+  mapTitle: 'Regions',
   showLeftColumn: true,
   showRegionTooltip: true,
   showRegionDetail: true,
@@ -131,7 +131,7 @@ $('#map-wrapper').kapusonsUiMap({
 - `regionOnClick`: defines a custom handler for click event on a state/polygon; this function ovverrides the default behavior 
 - `onMapLoaded`: the callback fired when the map is idle
  
-#### How to generate a custom GeoJson library as data source
+## How to generate a custom GeoJson library as data source
 You can easily create your GeoJson data source starting from the two GeoJson libraries provided by kapousns-ui-map. As you probably want to display a custom set of polygons/states, you'll find a usefull gulp task for this purpose. As example:
 
 ```javascript
