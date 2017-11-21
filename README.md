@@ -26,7 +26,6 @@
 ```
 git clone git@github.com:KapusonsSRL/kapusons-ui-map.git
 npm install
-bower install
 gulp serve
 ```
 
