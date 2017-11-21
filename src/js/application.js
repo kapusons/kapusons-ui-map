@@ -43,7 +43,7 @@
             mapTitle: 'Regions',
 			showLeftColumn: true,
 			showRegionTooltip: true,
-			showRegionDetail: true,
+			showRegionDescription: true,
 			map: {
 				center: {
 					lat: 38.513456, 
@@ -306,7 +306,7 @@
 					: '' ) +
 
 				//  THE REGION DETAIL ELEMENT
-				(options.showRegionDetail ? 
+				(options.showRegionDescription ? 
 				'		<div id="map-region-description"></div>'
 					: '' );
 
@@ -353,7 +353,7 @@
 				})
         	}
         	
-        	if(options.showRegionDetail){
+        	if(options.showRegionDescription){
         		$(document).on('click', '.scheda-trigger', function(ev){
 					ev.preventDefault();
 					var url = $(this).attr('href');
