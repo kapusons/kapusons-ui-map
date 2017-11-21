@@ -1,31 +1,126 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
 1 verbose cli   'C:\\Users\\gianluca\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js',
-1 verbose cli   'version',
-1 verbose cli   'patch' ]
+1 verbose cli   'publish' ]
 2 info using npm@3.8.1
 3 info using node@v5.8.0
-4 info git [ 'status', '--porcelain' ]
-5 verbose stack Error: Git working directory not clean.
-5 verbose stack M bower.json
-5 verbose stack M package.json
-5 verbose stack     at C:\Users\gianluca\AppData\Roaming\npm\node_modules\npm\lib\version.js:246:19
-5 verbose stack     at ChildProcess.exithandler (child_process.js:193:7)
-5 verbose stack     at emitTwo (events.js:100:13)
-5 verbose stack     at ChildProcess.emit (events.js:185:7)
-5 verbose stack     at maybeClose (internal/child_process.js:850:16)
-5 verbose stack     at Socket.<anonymous> (internal/child_process.js:323:11)
-5 verbose stack     at emitOne (events.js:90:13)
-5 verbose stack     at Socket.emit (events.js:182:7)
-5 verbose stack     at Pipe._onclose (net.js:475:12)
-6 verbose cwd c:\localhost\kapusons-ui-map
-7 error Windows_NT 10.0.15063
-8 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\gianluca\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "version" "patch"
-9 error node v5.8.0
-10 error npm  v3.8.1
-11 error Git working directory not clean.
-11 error M bower.json
-11 error M package.json
-12 error If you need help, you may report this error at:
-12 error     <https://github.com/npm/npm/issues>
-13 verbose exit [ 1, true ]
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: 'c:\\localhost\\kapusons-ui-map',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory C:\Users\gianluca\AppData\Roaming\npm-cache\kapusons-ui-map\1.0.0\package.tgz not in flight; packing
+9 verbose correctMkdir C:\Users\gianluca\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+10 info lifecycle kapusons-ui-map@1.0.0~prepublish: kapusons-ui-map@1.0.0
+11 silly lifecycle kapusons-ui-map@1.0.0~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ 'C:\\Users\\gianluca\\AppData\\Roaming\\npm-cache\\kapusons-ui-map\\1.0.0\\package.tgz',
+12 verbose tar pack   'c:\\localhost\\kapusons-ui-map' ]
+13 verbose tarball C:\Users\gianluca\AppData\Roaming\npm-cache\kapusons-ui-map\1.0.0\package.tgz
+14 verbose folder c:\localhost\kapusons-ui-map
+15 verbose addLocalTarball adding from inside cache C:\Users\gianluca\AppData\Roaming\npm-cache\kapusons-ui-map\1.0.0\package.tgz
+16 verbose correctMkdir C:\Users\gianluca\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+17 silly cache afterAdd kapusons-ui-map@1.0.0
+18 verbose afterAdd C:\Users\gianluca\AppData\Roaming\npm-cache\kapusons-ui-map\1.0.0\package\package.json not in flight; writing
+19 verbose correctMkdir C:\Users\gianluca\AppData\Roaming\npm-cache correctMkdir not in flight; initializing
+20 verbose afterAdd C:\Users\gianluca\AppData\Roaming\npm-cache\kapusons-ui-map\1.0.0\package\package.json written
+21 silly publish { name: 'kapusons-ui-map',
+21 silly publish   version: '1.0.0',
+21 silly publish   description: 'Kapusons implementation of interactive map through GeoJson data',
+21 silly publish   main: 'dist/kapusons-ui-map.js',
+21 silly publish   dependencies:
+21 silly publish    { jquery: '^3.0.0',
+21 silly publish      'font-awesome': '^4.7.0',
+21 silly publish      'animate.css': '^3.5.2' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git://github.com/KapusonsSRL/kapusons-ui-map.git' },
+21 silly publish   scripts: { start: 'gulp serve', postinstall: 'bower install' },
+21 silly publish   keywords:
+21 silly publish    [ 'google maps',
+21 silly publish      'geojson',
+21 silly publish      'features',
+21 silly publish      'feature',
+21 silly publish      'polygon',
+21 silly publish      'states',
+21 silly publish      'italy' ],
+21 silly publish   author: { name: 'lazymood', email: 'gianlucalavezzo@gmail.com' },
+21 silly publish   license: 'MIT',
+21 silly publish   devDependencies:
+21 silly publish    { 'gulp-json-format': '^1.0.0',
+21 silly publish      'run-sequence': '^2.2.0',
+21 silly publish      yargs: '^10.0.3',
+21 silly publish      bower: '1.8.2',
+21 silly publish      'browser-sync': '^2.18.12',
+21 silly publish      gulp: '^3.9.1',
+21 silly publish      'gulp-autoprefixer': '^3.1.1',
+21 silly publish      'gulp-concat': '^2.6.1',
+21 silly publish      'gulp-cssmin': '^0.2.0',
+21 silly publish      'gulp-rename': '^1.2.2',
+21 silly publish      'gulp-sass': '^3.1.0',
+21 silly publish      'gulp-uglify': '^3.0.0',
+21 silly publish      'map-stream': '0.0.7',
+21 silly publish      'perfect-scrollbar': '^1.0.3' },
+21 silly publish   readme: '`kapusons-ui-map` is a Kapusons implementation of interactive maps through GeoJson data. It uses [Google Maps API](https://developers.google.com/maps/). It allows you to easily render polygons of all the world\'s states over a google map.   \r\n\r\n![preview](https://rawgit.com/KapusonsSRL/kapusons-ui-map/master/dist/img/europe.png)\r\n\r\n## Features\r\n\r\n#### Complete navigation flow\r\n`kapusons-ui-map` consits in a mini-site with a common navigation flow: \r\n\r\n  - A general map, with the states you\'ve choosen, as an index\r\n  - A second level shows markers associated with the selected country\r\n  - A third level goes inside the marker info and displays them\r\n\r\n#### GeoJson data\r\n`kapusons-ui-map` provides two GeoJson libraries with polygons coordinates for:\r\n- Italans regions \r\n- All the world\'s states until 2015.\r\n\r\n#### Fully configurable jQuery plugin\r\n`kapusons-ui-map` requires jQuery as it\'s released as a jQuery plugin.\r\n\r\n## Installation\r\n\r\n#### Setup development environment\r\n\r\n```\r\ngit clone git@github.com:KapusonsSRL/kapusons-ui-map.git\r\nnpm install\r\nbower install\r\ngulp serve\r\n```\r\n\r\n#### As a bower package\r\n\r\n```\r\nbower install kapusons-ui-map --save\r\n```\r\n\r\n#### As a npm package\r\n\r\n```\r\nnpm install kapusons-ui-map --save\r\n```\r\n\r\n## Usage\r\nYou will need to include:\r\n - [Google maps API](https://maps.googleapis.com) with proper API key\r\n - [jQuery library](http://jquery.com/)\r\n - The JavaScript file `kapusons-ui-map.js` (or its minified version `kapusons-ui-map.min.js`)\r\n - The css file `kapusons-ui-map.css` (or its minified version `kapusons-ui-map.min.css`)\r\n\r\n Once that is done you\'ll only need a dom element in your html to initialize the jQuery plugin:\r\n ```\r\n<div id="map-wrapper"></div>\r\n```\r\n\r\nand call kapusonsUiMap plugin inside a `$(document).ready` function:\r\n```javascript\r\n  $(\'#map-wrapper\').kapusonsUiMap()\r\n```\r\n  \r\n## Configuration\r\nA more complex initialization with all options set could look like this:\r\n```javascript\r\n$(\'#map-wrapper\').kapusonsUiMap({\r\n  dataSource: "json/world.subset.json", \r\n  mapTitle: \'Regions\',\r\n  showLeftColumn: true,\r\n  showRegionTooltip: true,\r\n  showRegionDetail: true,\r\n  map: {\r\n    center: {\r\n      lat: 38.513456, \r\n      lng: 44.523900\r\n    },\r\n    zoom: 5,\r\n    scrollwheel: false,\r\n    gestureHandling: \'cooperative\',\r\n      mapTypeControlOptions: {\r\n        style: google.maps.MapTypeControlStyle.DEFAULT  \r\n    },\r\n    styles: [\r\n        {\r\n          featureType: "all",\r\n          elementType: "labels",\r\n          stylers: [\r\n            { \r\n              visibility: "off" \r\n            }\r\n          ]\r\n        }\r\n    ]\r\n  },\r\n  features:{\r\n    fillColor: "#3367D6",\r\n    fillColorSelected: "#4285F4",\r\n    strokeWeight: 1.5,\r\n    strokeColor: \'#96C7FC\',\r\n    fillOpacity: 1\r\n  },\r\n  regionOnClick: null,\r\n  onMapLoaded: null\r\n})\r\n```\r\n\r\n#### Options\r\n- `dataSource`: defines which json will populate your map; kapusons-ui-map provides two GeoJson libraries (Italans regions and all the world\'s states until 2015). [See how to generate a custom GeoJson library starting from  this two](https://github.com/KapusonsSRL/kapusons-ui-map#how-to-generate-a-custom-geojson-library-as-data-source).\r\n- `mapTitle`: a string title for your map\r\n- `showLeftColumn`: displaying or not the left column navigation menu \r\n- `showRegionTooltip`: displaying or not the tooltip on state/polygon hover\r\n- `showRegionDescription`: displaying or not the third level info of a selected state/region\r\n- `map`: MapOptions object specification: [Google Maps JavaScript API V3 Reference](https://developers.google.com/maps/documentation/javascript/reference)\r\n    - `center`\r\n        - `lat`\r\n        - `lng`\r\n    - `zoom`\r\n    - `scrollwheel`\r\n    - `gestureHandling`\r\n    - `mapTypeControlOptions`\r\n    - `styles`\r\n        - `featureType`\r\n        - `elementType` \r\n        - `stylers`\r\n            - `visibility`\r\n- `features`: defines the polygon styles\r\n    - `fillColor`\r\n    - `fillColorSelected`\r\n    - `strokeWeight`\r\n    - `strokeColor`\r\n    - `fillOpacity`\r\n- `regionOnClick`: defines a custom handler for click event on a state/polygon; this function ovverrides the default behavior \r\n- `onMapLoaded`: the callback fired when the map is idle\r\n \r\n## How to generate a custom GeoJson library as data source\r\nYou can easily create your GeoJson data source starting from the two GeoJson libraries provided by kapousns-ui-map. As you probably want to display a custom set of polygons/states, you\'ll find a usefull gulp task for this purpose. As example:\r\n\r\n```javascript\r\ngulp makejson --regions "it,fr,gb" --featureProperty ISO_A2 --searchIn world\r\n```\r\n\r\n- In the `--regions` parameter you can define a list of states/polygon you want to include in your map in the form of a comma separated string. Each value must match one of those supported standard code (ISO 3166 and others): **SOV_A3, ADMIN, ADM0_A3, GEOUNIT, GU_A3, SUBUNIT, SU_A3, name, NAME_LONG, BRK_A3, BRK_NAME, BRK_GROUP, ABBREV, POSTAL, FIPS_10_, ISO_A2, ISO_A3, ISO_N3, UN_A3, WB_A2, WB_A3, ADM0_A3_IS, ADM0_A3_US**\r\n- You\'ll define the selected standard code in the `--featureProperty` parameter, as a comparison value\r\n- the `--searchIn` parameter defines in which data source you\'ll search the specified regions (availables data source are **world** and **italy**)\r\n\r\n\r\n## License\r\n\r\nMIT (http://www.opensource.org/licenses/mit-license.php)\r\n\r\n## To do list\r\n\r\n* Improve mobile visualization\r\n* Replace google maps infowindow component with a custom one\r\n* Improve the configuration\r\n* Improve the documentation\r\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   gitHead: 'dcf54e8068c23e5c111a62b412fa3a6bb2c1e1ea',
+21 silly publish   bugs: { url: 'https://github.com/KapusonsSRL/kapusons-ui-map/issues' },
+21 silly publish   homepage: 'https://github.com/KapusonsSRL/kapusons-ui-map#readme',
+21 silly publish   _id: 'kapusons-ui-map@1.0.0',
+21 silly publish   _shasum: 'fea1e0359b131360b43c7f9e618195124de79c34',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name kapusons-ui-map
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.npmjs.org/
+26 silly mapToRegistry uri https://registry.npmjs.org/kapusons-ui-map
+27 verbose publish registryBase https://registry.npmjs.org/
+28 silly publish uploading C:\Users\gianluca\AppData\Roaming\npm-cache\kapusons-ui-map\1.0.0\package.tgz
+29 verbose request uri https://registry.npmjs.org/kapusons-ui-map
+30 verbose request sending authorization for write operation
+31 info attempt registry request try #1 at 16:34:20
+32 verbose request using bearer token for auth
+33 verbose request id a7ce79f2039d5d18
+34 http request PUT https://registry.npmjs.org/kapusons-ui-map
+35 http 403 https://registry.npmjs.org/kapusons-ui-map
+36 verbose headers { 'content-type': 'application/json',
+36 verbose headers   'cache-control': 'max-age=300',
+36 verbose headers   'content-length': '91',
+36 verbose headers   'accept-ranges': 'bytes',
+36 verbose headers   date: 'Tue, 21 Nov 2017 15:35:46 GMT',
+36 verbose headers   via: '1.1 varnish',
+36 verbose headers   connection: 'keep-alive',
+36 verbose headers   'x-served-by': 'cache-ams4129-AMS',
+36 verbose headers   'x-cache': 'MISS',
+36 verbose headers   'x-cache-hits': '0',
+36 verbose headers   'x-timer': 'S1511278461.650252,VS0,VE85601',
+36 verbose headers   vary: 'Accept-Encoding, Accept' }
+37 verbose request invalidating C:\Users\gianluca\AppData\Roaming\npm-cache\registry.npmjs.org\kapusons-ui-map on PUT
+38 error publish Failed PUT 403
+39 verbose stack Error: You cannot publish over the previously published version 1.0.0. : kapusons-ui-map
+39 verbose stack     at makeError (C:\Users\gianluca\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:264:12)
+39 verbose stack     at CachingRegistryClient.<anonymous> (C:\Users\gianluca\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:252:14)
+39 verbose stack     at Request._callback (C:\Users\gianluca\AppData\Roaming\npm\node_modules\npm\node_modules\npm-registry-client\lib\request.js:172:14)
+39 verbose stack     at Request.self.callback (C:\Users\gianluca\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:199:22)
+39 verbose stack     at emitTwo (events.js:100:13)
+39 verbose stack     at Request.emit (events.js:185:7)
+39 verbose stack     at Request.<anonymous> (C:\Users\gianluca\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:1036:10)
+39 verbose stack     at emitOne (events.js:95:20)
+39 verbose stack     at Request.emit (events.js:182:7)
+39 verbose stack     at IncomingMessage.<anonymous> (C:\Users\gianluca\AppData\Roaming\npm\node_modules\npm\node_modules\request\request.js:963:12)
+40 verbose statusCode 403
+41 verbose pkgid kapusons-ui-map
+42 verbose cwd c:\localhost\kapusons-ui-map
+43 error Windows_NT 10.0.15063
+44 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Users\\gianluca\\AppData\\Roaming\\npm\\node_modules\\npm\\bin\\npm-cli.js" "publish"
+45 error node v5.8.0
+46 error npm  v3.8.1
+47 error code E403
+48 error You cannot publish over the previously published version 1.0.0. : kapusons-ui-map
+49 error If you need help, you may report this error at:
+49 error     <https://github.com/npm/npm/issues>
+50 verbose exit [ 1, true ]
