@@ -11,6 +11,8 @@ concat           = require('gulp-concat'),
 mapstream        = require('map-stream'),
 argv             = require('yargs').argv,
 jsonFormat       = require('gulp-json-format'),
+jsonminify       = require('gulp-jsonminify'),
+filter           = require('gulp-filter'),
 runSequence      = require('run-sequence');
 
 // Configuration
@@ -24,7 +26,7 @@ var configuration = {
           './src/html/world/*.html'
       ],
       json: [
-      './src/json/*.json'
+        './src/json/*.json'
       ], 
       jsonFolder: './src/json/',
       img: './src/img/**/*',
@@ -33,10 +35,11 @@ var configuration = {
       ],
       js: [
           './src/js/application.js'
-      ]
-  },
-  dist: './dist'
-}
+      ],
+      l10n: './src/js/l10n/**/*'
+    },
+    dist: './dist'
+  }
 };
 
 
@@ -56,14 +59,15 @@ gulp.task('build:styles', function() {
 });
 
 //scripts
-gulp.task('build:scripts', function() {
+gulp.task('build:scripts', function(cb) {
   return gulp.src(configuration.paths.src.js)
   .pipe(concat(configuration.basename + '.js'))
   .pipe(gulp.dest(configuration.paths.dist))
   .pipe(rename({ suffix: '.min' }))
   .pipe(uglify().on('error', function (e) {
     console.log(e);
-}))
+    cb();
+  }))
   .pipe(gulp.dest(configuration.paths.dist))
 });
 
@@ -72,20 +76,37 @@ gulp.task('build:html', function() {
   .pipe(gulp.dest(configuration.paths.dist))
 });
 
-gulp.task('build:json', function() {
-  gulp.src(configuration.paths.src.json, {base: "./src/"})
-  .pipe(gulp.dest(configuration.paths.dist))
-});
 
 gulp.task('build:img', function() {
   gulp.src(configuration.paths.src.img)
   .pipe(gulp.dest(configuration.paths.dist + '/img'))
 });
 
-gulp.task('makejson', function() {
+gulp.task('build:l10n', function() {
+  gulp.src(configuration.paths.src.l10n)
+  .pipe(gulp.dest(configuration.paths.dist + '/l10n'))
+});
+
+gulp.task('json:build', function() {
+  gulp.src(configuration.paths.src.json, {base: "./src/"})
+  .pipe(gulp.dest(configuration.paths.dist))
+});
+
+gulp.task('json:minify', function() {
+  if(!argv.filename || typeof(argv.filename) != 'string'){
+    console.log('!### Error: specify a json filename by passing a --filename parameter e.g. gulp json:minify --filename "my-json-file.json"');
+    return ;
+  }
+
+  gulp.src(configuration.paths.src.jsonFolder + argv.filename)
+  .pipe(jsonminify())
+  .pipe(gulp.dest(configuration.paths.src.jsonFolder))
+});
+
+gulp.task('json:extract', function() {
 
   if(!argv.regions || typeof(argv.regions) != 'string'){
-    console.log('!### Error: specify at least a country or a region by passing a --regions parameter e.g. --regions "AFG,ARE,ZWE,IDN"');
+    console.log('!### Error: specify at least a country or a region by passing a --regions parameter e.g. --regions "it,fr,gb"');
     return ;
   }
 
@@ -157,19 +178,22 @@ gulp.task('serve', ['build'], function() {
   //watch .js files
   gulp.watch(configuration.paths.src.js, ['build:scripts', browserSync.reload]);
 
+  //watch l10n files
+  gulp.watch(configuration.paths.src.l10n, ['build:l10n', browserSync.reload]);
+
   //watch .html files
   gulp.watch(configuration.paths.src.html, ['build:html', browserSync.reload]);
 
   //watch images files
   gulp.watch(configuration.paths.src.img, ['build:img', browserSync.reload]);
 
-  //watch GeoJson files
-  gulp.watch(configuration.paths.src.json, ['build:json', browserSync.reload]);
+  // watch GeoJson files: disabled watching this fodler because of the world.json size 
+  // gulp.watch(configuration.paths.src.json, ['build:json', browserSync.reload]);
 
 });
 
 gulp.task('build', function(callback) {
-    runSequence(['build:html', 'build:json', 'build:img', 'build:styles', 'build:scripts'],
+    runSequence(['build:html', 'json:build', 'build:img', 'build:styles', 'build:scripts', 'build:l10n'],
         callback);
 });
 

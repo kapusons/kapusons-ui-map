@@ -1,0 +1,45 @@
+$.fn.kapusonsUiMap.l10ns = {"it": {}};
+
+$.fn.kapusonsUiMap.l10ns.it = {
+	"address": "indirizzo",
+	"phone": "telefono",
+	"details": "vai alla scheda",
+	"city": "città",
+	"website": "sito web",
+	"regions": {
+		"Austria":"Austria",
+		"Belgium":"Belgio",
+		"Bulgaria":"Bulgaria",
+		"Cyprus":"Cipro",
+		"Czech Rep.":"Repubblica Ceca",
+		"Germany":"Germania",
+		"Denmark":"Danimarca",
+		"Spain":"Spagna",
+		"Estonia":"Estonia",
+		"Finland":"Finlandia",
+		"France":"Francia",
+		"United Kingdom":"Regno Unito",
+		"Greece":"Grecia",
+		"Croatia":"Croazia",
+		"Hungary":"Ungheria",
+		"Ireland":"Irlanda",
+		"Iceland":"Islanda",
+		"Italy":"Italia",
+		"Liechtenstein":"Liechtenstein",
+		"Lithuania":"Lituania",
+		"Luxembourg":"Lussemburgo",
+		"Latvia":"Lettonia",
+		"Malta":"Malta",
+		"Netherlands":"Paesi Bassi",
+		"Norway":"Norvegia",
+		"Poland":"Polonia",
+		"Portugal":"Portogallo",
+		"Romania":"Romania",
+		"Serbia":"Serbia",
+		"Slovakia":"Slovacchia",
+		"Slovenia":"Slovenia",
+		"Sweden":"Svezia",
+		"Turkey":"Turchia"
+	}
+};
+

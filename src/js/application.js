@@ -1,5 +1,5 @@
 /*!
- * kapusons-ui-map 0.0.3
+ * kapusons-ui-map 1.0.5
  * https://github.com/KapusonsSRL/kapusons-ui-map
  * @license MIT licensed
  *
@@ -40,6 +40,7 @@
         // Creating some defaults, extending them with any options that were provided
         options = $.extend(true, {
             dataSource: "json/world.subset.json", 
+            l10n: 'en',
             mapTitle: 'Regions',
 			showLeftColumn: true,
 			showRegionTooltip: true,
@@ -86,9 +87,6 @@
          	return; 
         }
 
-        // TODO: public functions
-        // KMAP.publicMethod = publicMethod;
-
         prepareDom();
         
         var map = new google.maps.Map($('#map-canvas').get(0), options.map);
@@ -106,7 +104,7 @@
 			var feature = e.feature ;
 			var regName = feature.f.name;
 			var regListItem = $('<li data-region="' + regName.toLowerCase() + '"></li>');
-			var regTrigger = $('<a href="#" class="region-name">' + regName + '</a>');
+			var regTrigger = $('<a href="#" class="region-name">' + l10nRegName(regName) + '</a>');
 			var regCloseTrigger = $('<a href="#" class="close-region-detail"><img src="img/x.png"></a>');
 			regListItem.append(regTrigger).append(regCloseTrigger);
 
@@ -173,7 +171,7 @@
 		map.data.addListener('mouseover', function(e) {
 			if(isMobile()) return false;
 			if(options.showRegionTooltip) {
-				document.getElementById('region-tooltip').textContent =  e.feature.getId();
+				document.getElementById('region-tooltip').textContent = l10nRegName(e.feature.getId());
 				document.getElementById('region-tooltip').style.display = "inline";	
 			}
 			map.data.overrideStyle(e.feature, {fillColor: options.features.fillColorSelected});
@@ -211,7 +209,7 @@
 				return ;
 			}
 
-			// ON REGION CLICK DEFAULT BEHAVIOR
+			// ON REGION CLICK DEFAULT HANDLER
 
 			// Select the region clicked on the left menu
 			if(options.showLeftColumn) {
@@ -246,7 +244,7 @@
 				return;
 			};
 
-			document.getElementById("region-tooltip").style.left = (e.clientX + 25) + 'px';
+			document.getElementById("region-tooltip").style.left = ((e.clientX + 65 + $("#region-tooltip").width()) >= window.innerWidth ? (e.clientX - $("#region-tooltip").width() - 25) : (e.clientX + 25)) + 'px';
 			document.getElementById("region-tooltip").style.top = (e.clientY - ( $('#map-canvas').offset().top - $(document).scrollTop())) + 'px';
 		};
 
@@ -257,6 +255,16 @@
 				return ;
 			}
 		});
+
+		function l10nRegName(name){
+			if(!KMAP.l10ns[options.l10n]){
+				console.error('The specified l10n option (' + options.l10n + ') doesn\'t match the included l10n file (' + Object.keys($.fn.kapusonsUiMap.l10ns)[0] + '.js)');
+				return;
+			}
+			return (KMAP.l10ns[options.l10n]['regions'] ? 
+				(KMAP.l10ns[options.l10n]['regions'][name] ? 
+					KMAP.l10ns[options.l10n]['regions'][name] : name ) : name )
+		}
 
 		// Mobile detection
 		function isMobile(){
@@ -354,7 +362,7 @@
         	}
         	
         	if(options.showRegionDescription){
-        		$(document).on('click', '.scheda-trigger', function(ev){
+        		$(document).on('click', '.region-description-trigger', function(ev){
 					ev.preventDefault();
 					var url = $(this).attr('href');
 					$.ajax({
@@ -445,29 +453,29 @@
 				google.maps.event.addListener(marker, 'click', (function (m, infowindow) {
 					var info = '<div class="infowindow">' +
 					'<h3>' + m.name + '</h3>' +
-					'<div class="info">' + 
+					'	<div class="info">' + 
 					(m.title ? 
 						' <div class="info-title"><span>' + m.title + '</span></div>'  
 						: '') + 
 					(m.city ? 
-						' <div><span class="label">City:</span> <span>' + m.city + '</span></div>'  
+						' <div><span class="label">' + KMAP.l10ns[options.l10n]['city'] + ':</span> <span>' + m.city + '</span></div>'  
 						: '') +
 					(m.address ? 
-						' <div><span class="label">Address:</span> <span>' + m.address + '</span></div>' 
+						' <div><span class="label">' + KMAP.l10ns[options.l10n]['address'] + ':</span> <span>' + m.address + '</span></div>' 
 						: '') +
 					(m.phone ? 
-						' <div><span class="label">Phone:</span> <span>' + m.phone + '</span></div>' 
+						' <div><span class="label">' + KMAP.l10ns[options.l10n]['phone'] + ':</span> <span>' + m.phone + '</span></div>' 
 						: '') +
 					(m.email ? 
 						' <div><span class="label">Email:</span> <span><a href="mailto:' + m.email + '">' + m.email + '</a></span></div>' 
 						: '') +
 					(m.website ? 
-						' <div><span class="label">Website:</span> <span><a href="' + m.website + '" target="_blank">' + m.website + '</a></span></div>' 
+						' <div><span class="label">' + KMAP.l10ns[options.l10n]['website'] + ':</span> <span><a href="' + m.website + '" target="_blank">' + m.website + '</a></span></div>' 
 						: '') +
 					(m.url ?
-						' <a href="' + m.url + '" class="scheda-trigger">Details</a>'
+						' <a href="' + m.url + '" class="region-description-trigger">' + KMAP.l10ns[options.l10n]['details'] + '</a>'
 						: '') +
-					' </div>' +
+					'   </div>' +
 					'</div>';
 
 					$('.region-list-wrapper').append(info);
@@ -567,6 +575,16 @@
 			}
 		}
 
+		KMAP.l10ns = KMAP.l10ns || {
+			en: {
+				"address": "address",
+				"phone": "phone",
+				"details": "details",
+				"city": "city",
+				"website": "website"
+			}
+		};
+
 		/**
         * Shows a message in the console of the given type.
         */
@@ -574,412 +592,10 @@
             console && console[type] && console[type]('Kapusons-ui-map: ' + text);
         }
 
-    }; //end of $.fn.fullpage
+        // TODO: public functions
+        // KMAP.publicMethod = publicMethod;
+
+    };
 
 });
 
-
-
-
-
-
-/*
-var map, infowindow, aMarkers = [];
-
-function centerMap(LatLngList, map) {
-	var bounds = new google.maps.LatLngBounds();
-	for (var i = 0, LtLgLen = LatLngList.length; i < LtLgLen; i++) {
-		bounds.extend(LatLngList[i]);
-	}
-	map.setCenter(bounds.getCenter());
-	map.setZoom((window.innerWidth > 600 ? 8 : 7));
-	//map.fitBounds(bounds);
-}
-
-function placeMarkers(feat, map){
-	var items   = feat.f.items; 
-	if(!items) return false;
-	var aLatLng = [];
-	infowindow  = new google.maps.InfoWindow();
-
-	for (var i = 0; i < items.length; i++) {
-		var lat = items[i]['lat'];
-		var lng = items[i]['lng'];
-		if (!lat || !lng) continue;
-
-		var ltlg = new google.maps.LatLng(lat, lng);
-		aLatLng.push(ltlg);
-
-		marker = new google.maps.Marker({
-			"id": items[i]['id'],
-			"name": items[i]['name'],
-			"title": items[i]['title'],
-			"address": items[i]['address'],
-			"city": items[i]['city'],
-			"website": items[i]['website'],
-			"email": items[i]['email'],
-			"phone": items[i]['phone'],
-			"url": items[i]['url'],
-			"position": ltlg,
-			"map": map
-		});
-
-		aMarkers.push(marker);
-
-		google.maps.event.addListener(marker, 'click', (function (m, infowindow) {
-			var info = '<div class="infowindow">' +
-			'<h3>' + m.name + '</h3>' +
-			'<div class="info">' + 
-			(m.title ? 
-				' <div class="info-title"><span>' + m.title + '</span></div>'  
-				: '') + 
-			(m.city ? 
-				' <div><span class="label">City:</span> <span>' + m.city + '</span></div>'  
-				: '') +
-			(m.address ? 
-				' <div><span class="label">Address:</span> <span>' + m.address + '</span></div>' 
-				: '') +
-			(m.phone ? 
-				' <div><span class="label">Phone:</span> <span>' + m.phone + '</span></div>' 
-				: '') +
-			(m.email ? 
-				' <div><span class="label">Email:</span> <span><a href="mailto:' + m.email + '">' + m.email + '</a></span></div>' 
-				: '') +
-			(m.website ? 
-				' <div><span class="label">Website:</span> <span><a href="' + m.website + '" target="_blank">' + m.website + '</a></span></div>' 
-				: '') +
-			(m.url ?
-				' <a href="' + m.url + '" class="scheda-trigger">Details</a>'
-				: '') +
-			' </div>' +
-			'</div>';
-
-			$('.region-list-wrapper').append(info);
-
-			return function () {
-				infowindow.close();
-				infowindow.setContent(info);
-				setTimeout(function(){
-					infowindow.open(map, m);
-				}, 300);
-
-				setTimeout(function(){
-					map.setZoom(12);
-					map.setCenter(m.getPosition());
-				}, 500)
-			}
-
-		})(marker, infowindow));
-
-	}
-
-	document.getElementById('region-tooltip').style.display = "none";
-	centerMap(aLatLng, map);
-
-}
-
-function centerTo(location){
-	map.setOptions({
-		center: location,
-		zoom: configuration.mapOptions.zoom,
-	});
-}
-
-function styleFeatures(){
-	map.data.setStyle(function(feature) {
-		var fillColor = feature.getProperty('selected') ? configuration.styles.feature.fillColorSelected
-		: configuration.styles.feature.fillColor ;
-		return (
-			$.extend( configuration.styles.feature, {fillColor: fillColor} )
-		);
-	});
-}
-
-function cleanMarkers() {
-	for (var i = 0; i < aMarkers.length; i++ ) {
-		aMarkers[i].setMap(null);
-	}
-	aMarkers.length = 0;
-}
-
-function turnOffMapLabels(){
-	map.setOptions({
-		"styles": [
-		{
-			featureType: "all",
-			elementType: "labels",
-			stylers: [
-			{ visibility: "off" }
-			]
-		}
-		]
-	});
-}
-
-function turnOnMapLabels(){
-	map.setOptions({
-		"styles": [
-		{
-			stylers: [
-			{ visibility: "on" }
-			]
-		}
-		]
-	});
-}
-
-function setMobileMapHeight(){
-
-	if(!isMobile) return ;
-
-	var h = 0;
-
-	if($('.map-region-description-body').length){ // open detail
-		h += $('.map-region-description-body').outerHeight(true);
-		h += parseInt($('#map-region-description > h3').css('height').replace(/px/ig, ''));
-		h += $('.navigation-wrapper').outerHeight(true);
-	}else{
-		if($('.col-left').hasClass('open')){
-			$('.region-list-wrapper li, .region-list-wrapper > div').each(function(){
-				h += $(this).outerHeight(true);
-			});
-			h += $('.navigation-wrapper').outerHeight(true);
-		}else{
-			h = '100vh';
-		}
-	}
-
-	$('.map-wrapper').css({height: h});
-
-	if($('html, body').scrollTop() > 0){
-		$('html, body').animate({
-			scrollTop: $('.map-wrapper').offset().top
-		}, 800);
-	}
-}
-
-function initMap() {
-
-	map = new google.maps.Map(document.getElementById('map-canvas'), configuration.mapOptions);
-
-	// Load the GeoJSON manually (works cross-origin since google sets the required HTTP headers)
-	$.getJSON(configuration.dataSource, function (data) {
-		map.data.addGeoJson(data, { idPropertyName: 'name' });
-	}); 
-
-	styleFeatures();
-
-	map.data.addListener('addfeature', function(e) {
-		var feature = e.feature ;
-		var regName = feature.f.name; //f.BRK_NAME; //
-		var regListItem = $('<li data-region="' + regName.toLowerCase() + '"></li>');
-		var regTrigger = $('<a href="#" class="region-name">' + regName + '</a>');
-		var regCloseTrigger = $('<a href="#" title="Torna alla mappa generale" class="close-region-detail"><img src="img/x.png"></a>');
-		regListItem.append(regTrigger).append(regCloseTrigger);
-
-		regTrigger.on({
-			mouseenter: function(){
-				google.maps.event.trigger(map.data, 'mouseover', {
-					feature: feature
-				});
-			},
-
-			mouseleave: function(){
-				google.maps.event.trigger(map.data, 'mouseout', {
-					feature: feature
-				});
-			},
-
-			click: function(ev){
-				ev.preventDefault();
-				ev.stopPropagation();
-				var $this = $(this);
-				if($this.closest('li').hasClass('active')) return false;
-
-				google.maps.event.trigger(map.data, 'click', {
-					feature: feature
-				});
-
-				setMobileMapHeight();
-
-				setTimeout(function(){
-					if(isMobile) return;
-
-					psb.update();
-					$('.region-list-wrapper').get(0).scrollTop = 0;
-				}, 500);
-			}
-		})
-
-		$('.region-list').append(regListItem);
-
-		regCloseTrigger.on('click', function(ev){
-			ev.preventDefault();
-			cleanMarkers();
-			centerTo(configuration.mapOptions.center);
-			styleFeatures();
-			turnOffMapLabels();
-			$('#map-region-description').empty().hide();
-			$('.region-list-wrapper').removeClass('region-selected');
-			$('.region-list-wrapper').append($('.region-list'));
-			$('.region-list-wrapper .infowindow').remove();
-			$(this).closest('li').removeClass('active').siblings().fadeIn();
-
-			setMobileMapHeight();
-
-			setTimeout(function(){
-				if(isMobile) return;
-
-				psb.update();
-				$('.region-list-wrapper').get(0).scrollTop = 0;
-			}, 500);
-		})
-	});
-
-	// Set mouseover event for each feature.
-	map.data.addListener('mouseover', function(e) {
-		if(isMobile) return false;
-		document.getElementById('region-tooltip').textContent =  e.feature.getId();
-		document.getElementById('region-tooltip').style.display = "inline";
-		map.data.overrideStyle(e.feature, {fillColor: '#5992f1'});
-	});
-
-	// Set mouseout event for each feature.
-	map.data.addListener('mouseout', function(e) {
-		if(isMobile) return false;
-		document.getElementById('region-tooltip').style.display = "none";
-		e.feature.setProperty('fillColor', '#008542');
-		map.data.revertStyle();
-	});
-
-	// trap swipe origin coordinates
-	map.data.addListener('mousedown', function(e) {
-		map.clickX = e.xa.clientX;
-		map.clickY = e.xa.clientY;
-	})
-
-	map.data.addListener('click', function(e) {
-
-		// do nothing if scrolling (on mobile)
-		if(e.xa && (e.xa.clientY > (map.clickY + 30) || e.xa.clientY < (map.clickY - 30))){
-			return false;
-		}
-
-		// seleziono la regione cliccata sul menu di sx
-		var activeRegion = $('.region-list > li[data-region="' + e.feature.f.name.toLowerCase() + '"]');
-		$('.region-list-wrapper').addClass('region-selected');
-		$('.navigation-header').after($('.region-list'));
-		$('.region-list > li').removeClass('active');
-
-		// mark active region and hide all the others
-		activeRegion.addClass('active');
-		activeRegion.siblings().hide();
-
-		// Hide regions/polygons
-		map.data.setStyle(function(feature) {
-			return ({
-				visible: false
-			});
-		});
-
-		turnOnMapLabels();
-		placeMarkers(e.feature, map);
-
-	});
-
-	// Get mouse coordinates and create dynamc box.
-	document.body.onmousemove = function(e) {
-		if($(e.target).closest('.region-list').length){
-			$("#region-tooltip").hide();
-			return;
-		};
-		document.getElementById("region-tooltip").style.left = (e.clientX + 25) + 'px';
-		document.getElementById("region-tooltip").style.top = (e.clientY - ( $('#map-canvas').offset().top - $(document).scrollTop())) + 'px';
-	};
-
-	// Show the map once loaded
-	google.maps.event.addListenerOnce(map, 'idle', function(){
-		$('#map-canvas').animate({
-			opacity: 1
-		})
-	});
-}
-
-$(function(){ 
-
-	if(!isMobile){
-		psb = new PerfectScrollbar('.region-list-wrapper', {
-			wheelPropagation:true
-		});
-	}
-
-	$('.map-wrapper').css({
-		height: ($(window).height() >= 900 ? ($(window).height() - $('header').height()) : '100vh')
-	})
-
-	$(document).on('click', '.region-list-wrapper .infowindow h3', function(){
-		var index = $('.region-list-wrapper .infowindow').index($(this).closest('.infowindow'));
-		$('.col-left').removeClass('open');
-		google.maps.event.trigger(aMarkers[index], 'click');
-		setMobileMapHeight();
-	})
-
-	$(document).on('click', '.scheda-trigger', function(ev){
-		ev.preventDefault();
-		var url = $(this).attr('href');
-		$.ajax({
-			url : url,
-			type : 'GET'
-		}).done(function(data) {
-			$('#map-region-description').show().css({opacity: 0}).html(data);
-
-			setMobileMapHeight();
-
-			$('#map-region-description').css({opacity: 1})
-
-			if(isMobile) {
-				if(!$('.col-left').hasClass('open')) $('.mobile-handler').trigger('click');
-				return;
-			}
-
-			if($('.map-region-description-body').height() > ($('#map-region-description').height() - $('#map-region-description > h3').height())){
-				$('.map-region-description-body').css({height: ($('#map-region-description').height() - $('#map-region-description > h3').height())})
-
-				new PerfectScrollbar('.map-region-description-body', {
-					wheelPropagation: true
-				});
-			}
-		});
-	})
-
-	$(document).on('click', '.close-region-detail', function(ev){
-		ev.preventDefault();
-		$('#map-region-description').fadeOut(function(){
-			$(this).empty();
-			setMobileMapHeight();
-		});
-	})
-
-	$('.mobile-handler').on('click', function(ev){
-		ev.preventDefault();
-		$('.col-left').toggleClass('open');
-
-		setMobileMapHeight();
-	})
-
-	$('.mobile-close').on('click', function(ev){
-		ev.preventDefault();
-		$('.close-region-detail').trigger('click');
-		$('.col-left').toggleClass('open');
-
-		setMobileMapHeight();
-	})
-
-	$('.col-left .navigation-header').on('click', function(ev){
-		$('.region-list > li.active .close-region-detail').trigger('click');
-	})
-
-	initMap();
-
-});
-*/

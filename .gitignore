@@ -8,4 +8,6 @@ bower_components
 .ruby-version
 .bundle
 *.subset.json
+*.BAK
+BAK.*
 #dist

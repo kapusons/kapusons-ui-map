@@ -1,6 +1,6 @@
 {
   "name": "kapusons-ui-map",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Kapusons implementation of interactive map through GeoJson data",
   "main": "dist/kapusons-ui-map.js",
   "dependencies": {
@@ -27,19 +27,21 @@
   "author": "lazymood <gianlucalavezzo@gmail.com>",
   "license": "MIT",
   "devDependencies": {
-    "gulp-json-format": "^1.0.0",
-    "run-sequence": "^2.2.0",
-    "yargs": "^10.0.3",
     "bower": "1.8.2",
     "browser-sync": "^2.18.12",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",
     "gulp-cssmin": "^0.2.0",
+    "gulp-filter": "^5.0.1",
+    "gulp-json-format": "^1.0.0",
+    "gulp-jsonminify": "^1.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^3.0.0",
     "map-stream": "0.0.7",
-    "perfect-scrollbar": "^1.0.3"
+    "perfect-scrollbar": "^1.0.3",
+    "run-sequence": "^2.2.0",
+    "yargs": "^10.0.3"
   }
 }

@@ -21,9 +21,10 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 	<script src="https://rawgit.com/utatti/perfect-scrollbar/master/dist/perfect-scrollbar.min.js"></script>
 	<script src="kapusons-ui-map.js"></script>
-	
+
 	<script>
 		$('#map-wrapper').kapusonsUiMap({
+			dataSource: "json/world.subset.json", 
 			map:{
 				center: {
 					lat: 48.165734,

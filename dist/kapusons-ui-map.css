@@ -1,4 +1,11 @@
 @charset "UTF-8";
+/*!
+ * kapusons-ui-map 1.0.5
+ * https://github.com/KapusonsSRL/kapusons-ui-map
+ * @license MIT licensed
+ *
+ * Copyright (C) 2017 kapusons.it - A project by Lazymood
+ */
 @import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700");
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -4278,7 +4285,7 @@ a {
   clear: both; }
 
 /* line 40, src/scss/_application.scss */
-.scheda-trigger {
+.region-description-trigger {
   margin-top: 0.5rem;
   text-transform: uppercase;
   font-weight: 400;
