@@ -1,5 +1,5 @@
 /*!
- * kapusons-ui-map 1.0.5
+ * kapusons-ui-map 1.1.3
  * https://github.com/KapusonsSRL/kapusons-ui-map
  * @license MIT licensed
  *
