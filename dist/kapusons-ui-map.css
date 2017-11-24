@@ -4292,12 +4292,12 @@ a {
   display: block; }
 
 /* line 47, src/scss/_application.scss */
-.map-wrapper {
+#map-wrapper {
   position: relative;
   height: 100%; }
   @media (max-width: 991px) {
     /* line 47, src/scss/_application.scss */
-    .map-wrapper {
+    #map-wrapper {
       width: 690px;
       max-width: 100%;
       position: relative;
@@ -4305,11 +4305,11 @@ a {
       margin-right: auto;
       overflow: hidden; } }
   /* line 61, src/scss/_application.scss */
-  .map-wrapper.full-width #map-canvas {
+  #map-wrapper.full-width #map-canvas {
     left: 0;
     box-shadow: none; }
   /* line 66, src/scss/_application.scss */
-  .map-wrapper.full-width #map-region-description {
+  #map-wrapper.full-width #map-region-description {
     left: 70px; }
 
 /* line 72, src/scss/_application.scss */
