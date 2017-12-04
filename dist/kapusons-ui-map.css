@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*!
- * kapusons-ui-map 1.1.3
+ * kapusons-ui-map 1.2.0
  * https://github.com/KapusonsSRL/kapusons-ui-map
  * @license MIT licensed
  *
@@ -4314,7 +4314,7 @@ a {
 
 /* line 72, src/scss/_application.scss */
 #region-tooltip {
-  position: absolute;
+  position: fixed;
   z-index: 50;
   font-size: 1rem;
   display: none;
@@ -4324,7 +4324,7 @@ a {
   box-sizing: border-box;
   border-radius: 3px; }
 
-/* line 85, src/scss/_application.scss */
+/* line 84, src/scss/_application.scss */
 #map-canvas {
   position: absolute;
   top: 0;
@@ -4335,20 +4335,20 @@ a {
   z-index: 1;
   box-shadow: 0px 0 20px rgba(0, 0, 0, 0.3); }
   @media (max-width: 1100px) {
-    /* line 85, src/scss/_application.scss */
+    /* line 84, src/scss/_application.scss */
     #map-canvas {
       left: 320px; } }
   @media (max-width: 991px) {
-    /* line 85, src/scss/_application.scss */
+    /* line 84, src/scss/_application.scss */
     #map-canvas {
       left: 0;
       box-shadow: none; } }
   @media (max-width: 768px) {
-    /* line 85, src/scss/_application.scss */
+    /* line 84, src/scss/_application.scss */
     #map-canvas {
       left: 0; } }
 
-/* line 109, src/scss/_application.scss */
+/* line 108, src/scss/_application.scss */
 .navigation-header {
   height: 60px;
   background: #4285F4;
@@ -4356,7 +4356,7 @@ a {
   padding-left: 1.1rem;
   box-sizing: border-box;
   cursor: pointer; }
-  /* line 117, src/scss/_application.scss */
+  /* line 116, src/scss/_application.scss */
   .navigation-header h2 {
     display: inline-block;
     margin: 0;
@@ -4365,24 +4365,24 @@ a {
     font-weight: 400;
     line-height: 1.7rem;
     text-transform: uppercase; }
-  /* line 127, src/scss/_application.scss */
+  /* line 126, src/scss/_application.scss */
   .navigation-header img {
     position: absolute;
     top: 10px;
     left: 15px;
     width: 42px; }
 
-/* line 135, src/scss/_application.scss */
+/* line 134, src/scss/_application.scss */
 .close-region-description {
   position: absolute;
   right: 25px;
   top: 25px;
   transition: all .3s; }
-  /* line 141, src/scss/_application.scss */
+  /* line 140, src/scss/_application.scss */
   .close-region-description:hover {
     transform: rotateZ(180deg); }
 
-/* line 146, src/scss/_application.scss */
+/* line 145, src/scss/_application.scss */
 .close-region-detail {
   display: none;
   position: absolute;
@@ -4391,17 +4391,17 @@ a {
   transition: all .3s;
   z-index: 11; }
   @media (max-width: 991px) {
-    /* line 146, src/scss/_application.scss */
+    /* line 145, src/scss/_application.scss */
     .close-region-detail {
       right: 21px; } }
-  /* line 158, src/scss/_application.scss */
+  /* line 157, src/scss/_application.scss */
   .close-region-detail:hover {
     transform: rotateZ(180deg); }
-  /* line 162, src/scss/_application.scss */
+  /* line 161, src/scss/_application.scss */
   .close-region-detail img {
     width: 32px; }
 
-/* line 167, src/scss/_application.scss */
+/* line 166, src/scss/_application.scss */
 .col-left {
   position: absolute;
   top: 0px;
@@ -4413,26 +4413,26 @@ a {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
   z-index: 2;
   background: #fff; }
-  /* line 180, src/scss/_application.scss */
+  /* line 179, src/scss/_application.scss */
   .col-left .mobile-handler, .col-left .mobile-close {
     display: none; }
   @media (max-width: 1100px) {
-    /* line 167, src/scss/_application.scss */
+    /* line 166, src/scss/_application.scss */
     .col-left {
       width: 320px; } }
   @media (max-width: 991px) {
-    /* line 167, src/scss/_application.scss */
+    /* line 166, src/scss/_application.scss */
     .col-left {
       width: 100%;
       left: -100%;
       transition: 0.4s ease-in-out; }
-      /* line 193, src/scss/_application.scss */
+      /* line 192, src/scss/_application.scss */
       .col-left.open {
         left: 0; }
-        /* line 196, src/scss/_application.scss */
+        /* line 195, src/scss/_application.scss */
         .col-left.open .mobile-handler {
           display: none; }
-        /* line 200, src/scss/_application.scss */
+        /* line 199, src/scss/_application.scss */
         .col-left.open .mobile-close {
           display: inline-block;
           position: absolute;
@@ -4444,10 +4444,10 @@ a {
           width: 35px;
           height: 35px;
           overflow: hidden; }
-          /* line 212, src/scss/_application.scss */
+          /* line 211, src/scss/_application.scss */
           .col-left.open .mobile-close img {
             width: 40px; }
-      /* line 219, src/scss/_application.scss */
+      /* line 218, src/scss/_application.scss */
       .col-left .mobile-handler {
         display: block;
         position: absolute;
@@ -4459,7 +4459,7 @@ a {
         margin-top: -30px;
         background: #fff;
         box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.3); }
-        /* line 230, src/scss/_application.scss */
+        /* line 229, src/scss/_application.scss */
         .col-left .mobile-handler span {
           position: absolute;
           z-index: 3;
@@ -4469,14 +4469,14 @@ a {
           z-index: 4;
           font-size: 19px;
           margin-top: -4px; } }
-  /* line 243, src/scss/_application.scss */
+  /* line 242, src/scss/_application.scss */
   .col-left h3 {
     font-size: 15px;
     font-weight: 400;
     line-height: 19px;
     margin-bottom: 10px; }
 
-/* line 252, src/scss/_application.scss */
+/* line 251, src/scss/_application.scss */
 .region-list-wrapper {
   position: absolute;
   top: 60px;
@@ -4484,14 +4484,14 @@ a {
   right: 0;
   bottom: 0;
   overflow: hidden; }
-  /* line 260, src/scss/_application.scss */
+  /* line 259, src/scss/_application.scss */
   .region-list-wrapper.region-selected {
     top: 110px; }
-    /* line 263, src/scss/_application.scss */
+    /* line 262, src/scss/_application.scss */
     .region-list-wrapper.region-selected .infowindow {
       display: block;
       animation-delay: 0.4s; }
-  /* line 271, src/scss/_application.scss */
+  /* line 270, src/scss/_application.scss */
   .region-list-wrapper .infowindow {
     width: 100%;
     border-top: 1px solid #e7e7e7;
@@ -4503,39 +4503,39 @@ a {
     z-index: 0;
     display: none; }
     @media (max-width: 991px) {
-      /* line 282, src/scss/_application.scss */
+      /* line 281, src/scss/_application.scss */
       .region-list-wrapper .infowindow:last-child {
         border-bottom: 1px solid #e7e7e7; } }
-    /* line 288, src/scss/_application.scss */
+    /* line 287, src/scss/_application.scss */
     .region-list-wrapper .infowindow h3 {
       z-index: 2;
       position: relative;
       margin-top: 0;
       color: #0066cc;
       cursor: pointer; }
-    /* line 295, src/scss/_application.scss */
+    /* line 294, src/scss/_application.scss */
     .region-list-wrapper .infowindow div, .region-list-wrapper .infowindow span, .region-list-wrapper .infowindow a {
       z-index: 2;
       position: relative; }
-    /* line 299, src/scss/_application.scss */
+    /* line 298, src/scss/_application.scss */
     .region-list-wrapper .infowindow .info > div:not(.info-title) {
       padding: 2px;
       display: table;
       width: 100%; }
-    /* line 304, src/scss/_application.scss */
+    /* line 303, src/scss/_application.scss */
     .region-list-wrapper .infowindow .goto-detail {
       display: none; }
 
-/* line 312, src/scss/_application.scss */
+/* line 311, src/scss/_application.scss */
 .region-list {
   list-style-type: none;
   margin: 0;
   padding: 0; }
   @media (max-width: 991px) {
-    /* line 312, src/scss/_application.scss */
+    /* line 311, src/scss/_application.scss */
     .region-list {
       box-shadow: 0px 0px 3px #fff; } }
-  /* line 321, src/scss/_application.scss */
+  /* line 320, src/scss/_application.scss */
   .region-list li > a.region-name {
     cursor: pointer;
     display: block;
@@ -4543,32 +4543,32 @@ a {
     border-bottom: 1px solid #f0f0f0;
     transition: background 0.3s ease-in-out;
     color: #525a5f; }
-    /* line 328, src/scss/_application.scss */
+    /* line 327, src/scss/_application.scss */
     .region-list li > a.region-name:hover {
       background: #f1f1f1; }
-  /* line 333, src/scss/_application.scss */
+  /* line 332, src/scss/_application.scss */
   .region-list li.active {
     position: relative; }
-    /* line 335, src/scss/_application.scss */
+    /* line 334, src/scss/_application.scss */
     .region-list li.active > a.region-name {
       background: #3367D6;
       color: #fff; }
-    /* line 339, src/scss/_application.scss */
+    /* line 338, src/scss/_application.scss */
     .region-list li.active > a.close-region-detail {
       display: inline-block; }
 
-/* line 345, src/scss/_application.scss */
+/* line 344, src/scss/_application.scss */
 .gm-style-iw {
   text-align: center; }
-  /* line 347, src/scss/_application.scss */
+  /* line 346, src/scss/_application.scss */
   .gm-style-iw div {
     overflow: hidden !important; }
   @media (max-width: 550px) {
-    /* line 353, src/scss/_application.scss */
+    /* line 352, src/scss/_application.scss */
     .gm-style-iw .infowindow .info > div.info-settore {
       display: none !important; } }
 
-/* line 361, src/scss/_application.scss */
+/* line 360, src/scss/_application.scss */
 .infowindow {
   font-size: 0.9rem;
   width: 280px;
@@ -4576,13 +4576,13 @@ a {
   padding-bottom: 0.6rem;
   padding-top: 0.6rem;
   color: #000; }
-  /* line 369, src/scss/_application.scss */
+  /* line 368, src/scss/_application.scss */
   .infowindow div {
     color: #000; }
-  /* line 373, src/scss/_application.scss */
+  /* line 372, src/scss/_application.scss */
   .infowindow .info-title {
     padding: 10px 0; }
-  /* line 377, src/scss/_application.scss */
+  /* line 376, src/scss/_application.scss */
   .infowindow h3 {
     color: #000;
     font-size: 1.1em;
@@ -4591,7 +4591,7 @@ a {
     margin-bottom: 0;
     margin-top: 0px; }
 
-/* line 390, src/scss/_application.scss */
+/* line 389, src/scss/_application.scss */
 .info .label {
   display: table-cell;
   color: #999;
@@ -4599,24 +4599,24 @@ a {
   padding-right: 5px;
   margin-bottom: 2px; }
 
-/* line 398, src/scss/_application.scss */
+/* line 397, src/scss/_application.scss */
 .info .label + span {
   display: table-cell;
   color: #000; }
 
 @media (max-width: 550px) {
-  /* line 409, src/scss/_application.scss */
+  /* line 408, src/scss/_application.scss */
   .gm-style-iw .infowindow .info > div.info-settore {
     display: none !important; } }
 
-/* line 417, src/scss/_application.scss */
+/* line 416, src/scss/_application.scss */
 .ps__rail-y {
   z-index: 1; }
-  /* line 420, src/scss/_application.scss */
+  /* line 419, src/scss/_application.scss */
   .ps__rail-y + .infowindow {
     border-top: 0; }
 
-/* line 425, src/scss/_application.scss */
+/* line 424, src/scss/_application.scss */
 #map-region-description {
   display: none;
   position: absolute;
@@ -4629,16 +4629,16 @@ a {
   padding: 2rem 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); }
   @media (max-width: 1100px) {
-    /* line 425, src/scss/_application.scss */
+    /* line 424, src/scss/_application.scss */
     #map-region-description {
       left: 390px; } }
   @media (max-width: 991px) {
-    /* line 425, src/scss/_application.scss */
+    /* line 424, src/scss/_application.scss */
     #map-region-description {
       left: 0;
       top: 111px;
       width: 100%; } }
-  /* line 447, src/scss/_application.scss */
+  /* line 446, src/scss/_application.scss */
   #map-region-description .map-region-description-body {
     overflow: hidden;
     position: relative;
@@ -4646,13 +4646,13 @@ a {
     padding-bottom: 2rem;
     box-sizing: border-box; }
     @media (max-width: 991px) {
-      /* line 447, src/scss/_application.scss */
+      /* line 446, src/scss/_application.scss */
       #map-region-description .map-region-description-body {
         font-size: 0.85rem; } }
-  /* line 461, src/scss/_application.scss */
+  /* line 460, src/scss/_application.scss */
   #map-region-description div, #map-region-description p {
     font-family: inherit; }
-  /* line 465, src/scss/_application.scss */
+  /* line 464, src/scss/_application.scss */
   #map-region-description h3 {
     position: relative;
     margin: -2rem 0rem 0rem 0rem;
@@ -4664,31 +4664,31 @@ a {
     color: #fff;
     border-bottom: 1px solid #206ff2; }
     @media (max-width: 991px) {
-      /* line 465, src/scss/_application.scss */
+      /* line 464, src/scss/_application.scss */
       #map-region-description h3 {
         font-size: 1.1rem;
         padding: 1rem;
         padding-right: 3.8rem;
         line-height: 1.3rem; } }
-    /* line 483, src/scss/_application.scss */
+    /* line 482, src/scss/_application.scss */
     #map-region-description h3 small {
       display: block;
       margin-top: 5px;
       color: #8ab4f8;
       font-size: 1.2rem; }
       @media (max-width: 991px) {
-        /* line 483, src/scss/_application.scss */
+        /* line 482, src/scss/_application.scss */
         #map-region-description h3 small {
           font-size: 0.9rem; } }
-  /* line 495, src/scss/_application.scss */
+  /* line 494, src/scss/_application.scss */
   #map-region-description .description {
     margin: 2rem 0; }
-    /* line 497, src/scss/_application.scss */
+    /* line 496, src/scss/_application.scss */
     #map-region-description .description img {
       float: left;
       margin-right: 1rem;
       margin-bottom: 5px;
       max-width: 130px; }
-  /* line 505, src/scss/_application.scss */
+  /* line 504, src/scss/_application.scss */
   #map-region-description .info .label {
     width: 100px; }

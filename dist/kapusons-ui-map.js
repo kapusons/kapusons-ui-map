@@ -1,5 +1,5 @@
 /*!
- * kapusons-ui-map 1.1.3
+ * kapusons-ui-map 1.2.0
  * https://github.com/KapusonsSRL/kapusons-ui-map
  * @license MIT licensed
  *
@@ -45,6 +45,10 @@
 			showLeftColumn: true,
 			showRegionTooltip: true,
 			showRegionDescription: true,
+			size: {
+				width: window.innerWidth,
+				height: window.innerHeight
+			},
 			map: {
 				center: {
 					lat: 38.513456, 
@@ -88,6 +92,8 @@
         }
 
         prepareDom();
+
+        var kTooltip = $('#region-tooltip');
         
         var map = new google.maps.Map($('#map-canvas').get(0), options.map);
 
@@ -171,8 +177,10 @@
 		map.data.addListener('mouseover', function(e) {
 			if(isMobile()) return false;
 			if(options.showRegionTooltip) {
-				document.getElementById('region-tooltip').textContent = l10nRegName(e.feature.getId());
-				document.getElementById('region-tooltip').style.display = "inline";	
+				//console.log(e.feature.getId());
+				kTooltip.attr('class', e.feature.getId());
+				kTooltip.text(l10nRegName(e.feature.getId()));
+				kTooltip.get(0).style.display = "inline";	
 			}
 			map.data.overrideStyle(e.feature, {fillColor: options.features.fillColorSelected});
 		});
@@ -181,7 +189,7 @@
 		map.data.addListener('mouseout', function(e) {
 			if(isMobile()) return false;
 			if(options.showRegionTooltip) {
-				document.getElementById('region-tooltip').style.display = "none";	
+				kTooltip.hide();
 			}
 			e.feature.setProperty('fillColor', options.features.fillColor);
 			map.data.revertStyle();
@@ -235,8 +243,23 @@
 
 		});
 
+		container.mousemove(function(e) {
+			if(!options.showRegionTooltip) return;
+
+			if(options.showLeftColumn && $(e.target).closest('.region-list').length){
+				kTooltip.hide();
+				return;
+			};
+
+			kTooltip.css({
+				top: (e.pageY - (kTooltip.outerHeight()/3)),
+				left: ((e.pageX + 25) >= (container.offset().left + options.size.width - kTooltip.outerWidth()) ? 
+					(e.pageX - kTooltip.outerWidth() - 25) : (e.pageX + 25) )
+			})
+		});
+
 		// Get mouse coordinates and create dynamc box.
-		document.body.onmousemove = function(e) {
+		/*document.body.onmousemove = function(e) {
 			if(!options.showRegionTooltip) return;
 
 			if(options.showLeftColumn && $(e.target).closest('.region-list').length){
@@ -246,7 +269,7 @@
 
 			document.getElementById("region-tooltip").style.left = ((e.clientX + 65 + $("#region-tooltip").width()) >= window.innerWidth ? (e.clientX - $("#region-tooltip").width() - 25) : (e.clientX + 25)) + 'px';
 			document.getElementById("region-tooltip").style.top = (e.clientY - ( $('#map-canvas').offset().top - $(document).scrollTop())) + 'px';
-		};
+		};*/
 
 		// MAP LOADED CALLBACK
 		google.maps.event.addListenerOnce(map, 'idle', function(){
@@ -280,9 +303,7 @@
         */
         function prepareDom(){
 
-        	container.css({
-				height: ($(window).height() >= 900 ? $(window).height() : '100vh')
-			});
+        	container.css(options.size);
 
 			if(!options.showLeftColumn) container.addClass('full-width');
 
@@ -498,7 +519,7 @@
 			}
 
 			if(options.showRegionTooltip){
-				document.getElementById('region-tooltip').style.display = "none";	
+				kTooltip.hide();
 			}
 			
 			centerMap(aLatLng, map);

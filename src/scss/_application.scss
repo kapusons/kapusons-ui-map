@@ -70,10 +70,9 @@ a {
 }
 
 #region-tooltip {
-	position: absolute;
+	position: fixed;
 	z-index: 50;
 	font-size: 1rem;
-	//box-shadow:1px 1px 5px darken($red, 10%);
 	display: none;
 	background:#fff;
 	color: #444;
