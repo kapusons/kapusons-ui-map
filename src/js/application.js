@@ -1,5 +1,5 @@
 /*!
- * kapusons-ui-map 1.2.0
+ * kapusons-ui-map 1.2.1
  * https://github.com/KapusonsSRL/kapusons-ui-map
  * @license MIT licensed
  *
@@ -243,6 +243,7 @@
 
 		});
 
+		// TOOLTIP POSITION
 		container.mousemove(function(e) {
 			if(!options.showRegionTooltip) return;
 
@@ -252,24 +253,12 @@
 			};
 
 			kTooltip.css({
-				top: (e.pageY - (kTooltip.outerHeight()/3)),
+				top: (e.pageY - $(document).scrollTop() - (kTooltip.outerHeight()/3)),
 				left: ((e.pageX + 25) >= (container.offset().left + options.size.width - kTooltip.outerWidth()) ? 
 					(e.pageX - kTooltip.outerWidth() - 25) : (e.pageX + 25) )
 			})
 		});
 
-		// Get mouse coordinates and create dynamc box.
-		/*document.body.onmousemove = function(e) {
-			if(!options.showRegionTooltip) return;
-
-			if(options.showLeftColumn && $(e.target).closest('.region-list').length){
-				$("#region-tooltip").hide();
-				return;
-			};
-
-			document.getElementById("region-tooltip").style.left = ((e.clientX + 65 + $("#region-tooltip").width()) >= window.innerWidth ? (e.clientX - $("#region-tooltip").width() - 25) : (e.clientX + 25)) + 'px';
-			document.getElementById("region-tooltip").style.top = (e.clientY - ( $('#map-canvas').offset().top - $(document).scrollTop())) + 'px';
-		};*/
 
 		// MAP LOADED CALLBACK
 		google.maps.event.addListenerOnce(map, 'idle', function(){

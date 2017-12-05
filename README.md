@@ -114,7 +114,7 @@ $('#map-wrapper').kapusonsUiMap({
 - `l10n`: defines the localization for your map
 - `mapTitle`: a string title for your map
 - `showLeftColumn`: displaying or not the left column navigation menu 
-- `showRegionTooltip`: displaying or not the tooltip on state/polygon hover
+- `showRegionTooltip`: displaying or not the tooltip on state/polygon hover. The tooltip has a class that corresponds to the hovered region name (e.g. .Egypt, .Italy etc...) 
 - `showRegionDescription`: displaying or not the third level info of a selected state/region
 - `map`: MapOptions object specification: [Google Maps JavaScript API V3 Reference](https://developers.google.com/maps/documentation/javascript/reference)
     - `center`
@@ -154,7 +154,7 @@ This task generates a `(italy/world).subset-json` file in the src/json folder.
 Once that is done, you can minify your new GeoJson file by running this task: 
 
 ```javascript
-gulp json:minify --filename "your-brand-new-jsonfile.json"
+gulp json:minify --filename "your-brand-new.json"
 ```
 
 By running the `gulp serve` task all the json file in the src folder will be copied into the dist/json folder.
