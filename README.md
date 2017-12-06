@@ -14,7 +14,7 @@ Features
 
 #### GeoJson data
 `kapusons-ui-map` provides two GeoJson libraries with polygons coordinates for:
-- Italans regions 
+- Italian regions
 - All the world's states until 2015.
 
 #### Fully configurable jQuery plugin
