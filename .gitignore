@@ -5,6 +5,7 @@ node_modules
 bower_components
 *.sublime-project
 *.sublime-workspace
+*.code-workspace
 .ruby-version
 .bundle
 *.subset.json
