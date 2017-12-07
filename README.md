@@ -32,12 +32,6 @@ bower install
 gulp serve
 ```
 
-#### As a bower package
-
-```
-bower install kapusons-ui-map --save
-```
-
 #### As a npm package
 
 ```
