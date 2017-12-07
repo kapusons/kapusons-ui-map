@@ -111,7 +111,7 @@ $('#map-wrapper').kapusonsUiMap({
 ```
 
 #### Options
-- `dataSource`: defines which json will populate your map; kapusons-ui-map provides two GeoJson libraries (Italans regions and all the world's states until 2015). [See how to generate a custom GeoJson library starting from  this two](https://github.com/KapusonsSRL/kapusons-ui-map#how-to-generate-a-custom-geojson-library-as-data-source).
+- `dataSource`: defines which json will populate your map; kapusons-ui-map provides two GeoJson libraries (Italian regions and all the world's states until 2015). [See how to generate a custom GeoJson library starting from  this two](https://github.com/KapusonsSRL/kapusons-ui-map#how-to-generate-a-custom-geojson-library-as-data-source).
 - `l10n`: defines the localization for your map
 - `mapTitle`: a string title for your map
 - `showLeftColumn`: displaying or not the left column navigation menu 
