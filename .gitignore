@@ -6,6 +6,7 @@ bower_components
 *.sublime-project
 *.sublime-workspace
 *.code-workspace
+.vscode
 .ruby-version
 .bundle
 *.subset.json
