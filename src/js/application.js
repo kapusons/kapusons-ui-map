@@ -31,6 +31,11 @@
          	return; 
      	}
 
+     	if(!(typeof google === 'object' && typeof google.maps === 'object')){
+     		showError('warn', 'Google maps API with proper API key is required');
+         	return; 
+     	}
+
         // common jQuery objects
         var $htmlBody = $('html, body');
         var $body = $('body');

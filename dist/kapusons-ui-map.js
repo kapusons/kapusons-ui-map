@@ -1,5 +1,5 @@
 /*!
- * kapusons-ui-map 1.2.1
+ * kapusons-ui-map 1.3.1
  * https://github.com/KapusonsSRL/kapusons-ui-map
  * @license MIT licensed
  *
@@ -28,6 +28,11 @@
         //only once my friend!
         if($('html').hasClass(ENABLED)){ 
         	showError('error', 'Kapuosns-ui-map can only be initialized once and you are doing it multiple times!');
+         	return; 
+     	}
+
+     	if(!(typeof google === 'object' && typeof google.maps === 'object')){
+     		showError('warn', 'Google maps API with proper API key is required');
          	return; 
      	}
 
