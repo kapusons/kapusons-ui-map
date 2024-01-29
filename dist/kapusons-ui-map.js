@@ -113,7 +113,7 @@
 			if(!options.showLeftColumn) return ;
 
 			var feature = e.feature ;
-			var regName = feature.f.name;
+			var regName = feature.getId();
 			var regListItem = $('<li data-region="' + regName.toLowerCase() + '"></li>');
 			var regTrigger = $('<a href="#" class="region-name">' + l10nRegName(regName) + '</a>');
 			var regCloseTrigger = $('<a href="#" class="close-region-detail"><img src="img/x.png"></a>');
@@ -315,7 +315,7 @@
 				'				<ul class="region-list"></ul> ' +
 				'			</div> ' +
 				'		</div> ' +
-				'		<a class="mobile-handler" href="#"><span class="fa fa-caret-right fa-lg"></span></a> ' +
+				'		<a class="mobile-handler" href="#"><span class="bi bi-caret-right-fill"></span></a> ' +
 				'		<a class="mobile-close" href="#"><img src="img/x.png" /></a>' +
 				'	</div>'
 				: '') +
