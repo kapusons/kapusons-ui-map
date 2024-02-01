@@ -1,6 +1,6 @@
 `kapusons-ui-map` is a Kapusons implementation of interactive maps through GeoJson data. It uses [Google Maps API](https://developers.google.com/maps/). It allows you to easily render polygons of all the world's states over a google map.   
 
-![preview](https://rawgit.com/KapusonsSRL/kapusons-ui-map/master/dist/img/europe.png)
+![preview](https://raw.githubusercontent.com/kapusons/kapusons-ui-map/master/dist/img/europe.png)
 
 Features
 ------------
